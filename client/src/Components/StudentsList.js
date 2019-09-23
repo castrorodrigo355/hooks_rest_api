@@ -31,9 +31,9 @@ const StudentsList = (props) => {
                         <li key={i}>
                             {student.name} - 
                             {student.age} - 
-                            <button onClick={() => deleteStudent(student._id)}>Delete</button>
-                            <button onClick={() => getStudent(student._id)}>Info</button>
-                            <button onClick={() => updateStudent(student)}>Edit</button>
+                            <button type="submit" className="btn btn-danger" onClick={() => deleteStudent(student._id)}>Delete</button>
+                            <button type="submit" className="btn btn-secondary" onClick={() => updateStudent(student)}>Edit</button>
+                            <button type="submit" className="btn btn-info" onClick={() => getStudent(student._id)}>Info</button>
                         </li>
                         )
                     })
