@@ -29,11 +29,10 @@ async function deleteStudent(id){
 
 async function postStudent(student){
     const response = await fetch(`${url}`, {
-        // headers: {
-        //     "Content-Type": "application/json"
-        // },
-        method:"POST",
-        body: student
+        method: 'POST',
+        headers: { 'Accept': 'application/json',
+                    'Content-Type': 'application/json'},
+        body: JSON.stringify(student)
     });
     const data = await response.json();
     return data

@@ -40,10 +40,9 @@ const App = () => {
   }
 
   async function onPostStudent(student){
-    // console.log(student)
     try { 
       var student = await service.postStudent(student)
-      // console.log(student)
+      console.log(student)
     } catch(e) { 
       console.error(e);
     }

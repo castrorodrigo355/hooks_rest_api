@@ -12,17 +12,17 @@ const StudentsForm = (props) => {
 
     const onSubmit = e => {
         e.preventDefault();
-        console.log(e)
+        // console.log(e)
         // if(person.name === '' || person.age === '') {
         //     console.log("please complet fields")
         // }else{
-        //     const student = {
-        //         name: person.name,
-        //         age: person.age,
-        //     }
-        //     // console.log(formDataStudent)
-        //     props.onPostStudent(student)
-        //     // setPerson({ name: '', age: '' });
+        const student = {
+            name: person.name,
+            age: person.age,
+        }
+        // console.log(student)
+        props.onPostStudent(student)
+        setPerson({ name: '', age: '' });
         // }
     }
 
