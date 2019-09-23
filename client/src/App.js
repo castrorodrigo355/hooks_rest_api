@@ -36,13 +36,24 @@ const App = () => {
     } catch(e) { 
       console.error(e);
     }
-    getDataStudents();
   }
 
   async function onPostStudent(student){
     try { 
       var student = await service.postStudent(student)
       console.log(student)
+    } catch(e) { 
+      console.error(e);
+    }
+    getDataStudents();
+  }
+
+  async function onUpdateStudent(student){
+    try {
+      const newStudent = {name: student.name + "333", 
+                          age: student.age + "333"}
+      var response = await service.updateStudent(student._id, newStudent)
+      console.log(response)
     } catch(e) { 
       console.error(e);
     }
@@ -56,6 +67,7 @@ const App = () => {
       <hr/>
         <StudentsList students={students} 
                       onDeleteStudent={onDeleteStudent}
+                      onUpdateStudent={onUpdateStudent}
                       onGetStudent={onGetStudent}/>
       <hr/>
       

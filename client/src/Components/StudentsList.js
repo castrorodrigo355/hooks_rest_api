@@ -1,12 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const StudentsList = (props) => {
+
+    // const [idRegister, setIdRegister] = useState(null);
 
     const deleteStudent = id => {
         props.onDeleteStudent(id)
     }
+
     const getStudent = id => {
         props.onGetStudent(id)
+    }
+
+    const updateStudent = student => {
+        // const studentRegister = { 
+        //     _id: student._id,
+        //     name: student.name,
+        //     age: student.age
+        // };
+        // setIdRegister({idRegister: studentRegister});
+        props.onUpdateStudent(student)
     }
 
     return (
@@ -20,6 +33,7 @@ const StudentsList = (props) => {
                             {student.age} - 
                             <button onClick={() => deleteStudent(student._id)}>Delete</button>
                             <button onClick={() => getStudent(student._id)}>Info</button>
+                            <button onClick={() => updateStudent(student)}>Edit</button>
                         </li>
                         )
                     })
